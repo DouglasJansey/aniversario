@@ -1,9 +1,9 @@
-import { checkIn } from '@/../importsComponents'
+import { mainComponent } from '@/../importsComponents'
 
 export default function Home() {
   return (
     <>
-    {checkIn}
+    {mainComponent}
     </>
   )
 }
