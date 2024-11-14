@@ -3,9 +3,6 @@ import { header } from '../../../importsComponents'
 export default function MainComponent() {
     return (
         <div className={style.mainContainer}>
-            <div className={style.containerHeader}>
-                {header}
-            </div>
             <div className={style.containerMain}>
                 <figure className={style.containerPhoto}>
                     <img src='/images/lais.png' alt='foto_Laís' />
