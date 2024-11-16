@@ -1,5 +1,4 @@
 import style from './Main.module.sass'
-import { header } from '../../../importsComponents'
 export default function MainComponent() {
     return (
         <div className={style.mainContainer}>
