@@ -12,10 +12,6 @@ export default function MainComponent() {
                     <p>1 aninho</p>
                 </div>
             </div>
-            <div className={style.containerFlower}>
-                <img src={'/images/flowers.png'} alt='' className={style.flowers} />
-                <img src={'/images/flowers.png'} alt='' className={style.flowerRight} />
-            </div>
         </div>
     )
 }

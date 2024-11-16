@@ -25,7 +25,7 @@ export default function CheckIn() {
     }
 
     return (
-        <div className={style.containerCheck}>
+        <div id="check" className={style.containerCheck}>
             <span className={style.textProps}>
                 O grande dia está chegando e para que seja possível atender a todos
                 da melhor maneira e com muito preparo, gostariamos de ter sua
@@ -54,7 +54,7 @@ export default function CheckIn() {
                     </span>
                 </div>
                 <div>
-                    Quantos adultos?
+                    Quantos acompanhantes?
                     <span>
                         <input className={style.buttonForm} onClick={() => QuantityAccumulate(-1)} type="button" value="-" />
                         {quantity}
