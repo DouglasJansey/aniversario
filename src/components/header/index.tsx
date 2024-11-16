@@ -6,7 +6,7 @@ export default function header() {
         <div className={style.flexContainer}>
             <nav className={style.navbar}>
                 {/* Add a background image to the link */}
-                <Link className={style.textLink} href={'#'}>Confirmar presença
+                <Link className={style.textLink} href={'#check'}>Confirmar presença
                     <div>
                         <img src="/images/backgroundLink.png" alt="" />
                     </div>
