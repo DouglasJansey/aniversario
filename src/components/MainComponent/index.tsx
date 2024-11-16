@@ -1,5 +1,5 @@
 import { main, checkIn } from '@../../../importsComponents'
-import style from '../../components/Main/Main.module.sass'
+import style from './mainComponent.module.sass'
 export default function MainComponent() {
     return (
         <>
@@ -7,8 +7,14 @@ export default function MainComponent() {
                 <img src={'/images/flowers.png'} alt='' className={style.flowers} />
                 <img src={'/images/flowers.png'} alt='' className={style.flowerRight} />
             </div>
-            {main}
-            {checkIn}
+            <section className={style.flex}>
+                <article>
+                    {main}
+                </article>
+                <article>
+                    {checkIn}
+                </article>
+            </section>
         </>
     )
 }

@@ -25,12 +25,12 @@ export default function CheckIn() {
     }
 
     return (
-        <div id="check" className={style.containerCheck}>
-            <span className={style.textProps}>
+        <section id="check" className={style.containerCheck}>
+            <div className={style.textProps}>
                 O grande dia está chegando e para que seja possível atender a todos
                 da melhor maneira e com muito preparo, gostariamos de ter sua
                 presença confirmada.
-            </span>
+            </div>
             <form className={style.formContainer}>
                 <label htmlFor="name">Nome:
                     <input type="text" name="name"
@@ -64,6 +64,6 @@ export default function CheckIn() {
                 {adultNumbers()}
             </form>
             <input type='button' className={style.buttonSubmit} value="Confirmar presença" />
-        </div>
+        </section>
     )
 }
