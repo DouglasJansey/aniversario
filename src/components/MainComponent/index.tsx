@@ -1,4 +1,4 @@
-import { main, checkIn } from '@../../../importsComponents'
+import { main, checkIn, location } from '@../../../importsComponents'
 import style from './mainComponent.module.sass'
 export default function MainComponent() {
     return (
@@ -13,6 +13,9 @@ export default function MainComponent() {
                 </article>
                 <article>
                     {checkIn}
+                </article>
+                <article>
+                    {location}
                 </article>
             </section>
         </>
