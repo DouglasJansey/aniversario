@@ -35,11 +35,9 @@
     width: 80%
     height: 100%
     flex-wrap: wrap
-    z-index: 10
+    z-index: 13
 .menu
     @extend .navbar
-    nav
-        display: none
     input
         display: none
         &:checked
@@ -63,7 +61,7 @@
                     transition: all .2s linear
 
     label
-        display: flex
+        display: none
         justify-content: space-evenly
         align-items: center
         flex-direction: column
@@ -78,7 +76,13 @@
             transition: all .2s linear
             z-index: inherit
 
-@media screen and ( max-width: 475px )
+@media screen and ( max-width: 675px )
+    .menu
+        display: flex
+        label
+            display: flex
+        nav
+            display: none
     .navbar
         flex-direction: column
         align-items: center

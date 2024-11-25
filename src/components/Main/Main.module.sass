@@ -12,19 +12,44 @@
     justify-content: center
     align-items: center
     background-image: url(/images/flowersCircle.png)
-    background-size: 100% 100%
+    background-size: 90% 100%
     background-repeat: no-repeat
     background-position: center
     position: relative
-    padding: 25px 5px
-    height: 100%
+    padding: 35px 0px
+    height: 70%
     img
-        width: 80%
+        width: 70%
         margin-top: 10px
-
-.containerMain
+.containerAnimals
     display: flex
     justify-content: center
+    align-items: flex-end
+    width: 100%
+    position: relative
+    img:nth-child(3)
+        max-height: 280px
+        height: 100%
+        z-index: 5
+    img:nth-child(1)
+        max-height: 70px
+    img:nth-child(2)
+        max-height: 110px
+    img:nth-child(4)
+        max-height: 190px
+.containerFlex
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-wrap: wrap
+    height: 100%
+    width: 100%
+    z-index: 0
+.flowers
+.containerMain
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
     align-items: center
     flex-wrap: wrap
     gap: 10%
@@ -36,10 +61,10 @@
 .nameContainer
     @extend .text
     display: flex
+    flex-direction: column
     justify-content: center
     align-items: center
     width: auto
-    display: flex
     figure
         justify-content: center
         display: flex
@@ -47,9 +72,29 @@
     img
         min-width: 50px
         width: 90%
-@media screen and ( max-width: 400px )
+@media screen and ( max-width: 675px )
     .flowers, .flowerRight
         width: 40%
+        height: 10%
     .nameContainer
         img
             width: 50%
+    .containerAnimals
+        width: 90%
+        position: relative
+        z-index: 2
+        img
+            margin: auto
+        img:nth-child(1)
+            position: absolute
+            left: 50px
+            max-height: 70px
+            z-index: 7
+        img:nth-child(2)
+            position: absolute
+            left: -20px
+            z-index: 6
+        img:nth-child(4)
+            position: absolute
+            right: 0
+            z-index: 1

@@ -3,6 +3,13 @@ import { useState } from 'react'
 import style from './checkin.module.sass'
 export default function CheckIn() {
     const [quantity, setQuantity] = useState<number>(0)
+    const url = process.env.NEXT_PUBLIC_URL
+    // FUNCTION TO SEND MENSAGEM IN WHATSAPP NUMBER
+    //send?phone=seunumerodetelefone&text=sua%20mensagem.
+    console.log(url)
+    function senMessagem(){
+        
+    }
 
     function QuantityAccumulate(increment: number) {
         const incrementValue = Math.max(0, quantity + increment)
