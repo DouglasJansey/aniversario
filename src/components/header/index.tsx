@@ -13,14 +13,14 @@ export default function header() {
                 </label>
                 <nav className={style.navbar}>
                     {/* Add a background image to the link */}
-                    {/* <Link className={style.textLink} href={'#check'}>Confirmar presença
+                    <Link className={style.textLink} href={'#check'}>Confirmar presença
                     </Link>
 
                     <Link className={style.textLink} href={'#location'}>
                         Localização
                     </Link>
                     <Link className={style.textLink} href={'#giftoptions'}>Opções de presentes
-                    </Link> */}
+                    </Link>
                 </nav>
             </div>
         </div>
