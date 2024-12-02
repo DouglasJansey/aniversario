@@ -2,9 +2,7 @@
 import { useState } from 'react'
 import style from './checkin.module.sass'
 import { useRouter } from 'next/navigation'
-interface MessageProps{
-    
-}
+
 export default function CheckIn() {
     const [quantity, setQuantity] = useState<number>(0)
     const [confirm, setConfirm] = useState<string>('')
@@ -12,12 +10,10 @@ export default function CheckIn() {
     const router = useRouter()
     const url = process.env.NEXT_PUBLIC_URL
     const phone = process.env.NEXT_PUBLIC_PHONE_NUMBER
-    // FUNCTION TO SEND MENSAGEM IN WHATSAPP NUMBER
-    //send?phone=seunumerodetelefone&text=sua%20mensagem.
-    function filterGuests(list: any[]){ 
-      const values: string[] = []
-      list.length > 0 && list.forEach((element, index) => index !== 0 && values.push(element))
-      return values.join(', ')
+    function filterGuests(list: string[]){ 
+        const values: string[] = []
+        list.length > 0 && list.forEach((element, index) => index !== 0 && values.push(element))
+        return values.join(', ')
     }
     function checkInputs(valuesCheck: any){
         console.log(valuesCheck)
@@ -28,6 +24,7 @@ export default function CheckIn() {
         setError('')
         return true
     }
+    // FUNCTION TO SEND MENSAGEM IN WHATSAPP NUMBER
     function sendMessagem(e: any) {
         e.preventDefault()
         const {name} = e.target

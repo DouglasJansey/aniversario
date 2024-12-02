@@ -2,10 +2,10 @@
 @import '../../../styles/_variables'
 @keyframes fadeIn
     0%
-        transform: translateY(-50px)
+        height: 0px
         opacity: 0
     100%
-        transform: translateY(0)
+        height: 100px
 
 .flexContainer
     display: flex
@@ -36,6 +36,7 @@
     height: 100%
     flex-wrap: wrap
     z-index: 13
+    background: red
 .menu
     @extend .navbar
     input
@@ -43,7 +44,8 @@
         &:checked
             ~ nav
                 display: flex
-                // animation: fadeIn .7s ease-in forwards
+                height: 100%
+                animation: fadeIn .2s linear forwards
             + label
                 justify-content: center
                 align-items: center
@@ -65,6 +67,7 @@
         justify-content: space-evenly
         align-items: center
         flex-direction: column
+        cursor: pointer
         width: 30px
         height: 30px
         z-index: 10
@@ -83,6 +86,7 @@
             display: flex
         nav
             display: none
+            overflow: hidden
     .navbar
         flex-direction: column
         align-items: center
