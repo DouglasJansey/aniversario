@@ -31,8 +31,7 @@ export default function CheckIn() {
         const inputValues = quantity < 1 && name.value || Array.from({length: name.length}, (_, i) => name[i].value)
         const outputValues = quantity >= 1 && filterGuests(inputValues)
         const message = quantity < 1 ? `Oi, estou entrando em contato para confirmar presença, ${inputValues}` 
-        : `Oi, estou entrando em contato para confirma presença, ${inputValues[0]} 
-        e mais convidado(os): ${outputValues}`;
+        : `Oi, estou entrando em contato para confirma presença, ${inputValues[0]} e mais acompanhantes: ${outputValues}`;
         (checkInputs(name) && confirm === 'Yes') && router.push(`${url}/send?phone=${phone}&text=${message}.`);
         
     }
