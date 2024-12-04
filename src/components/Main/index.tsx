@@ -18,6 +18,8 @@ export default function MainComponent() {
                 <img src="/images/animals.png" alt="" />
                 <img src="/images/bambi.png" alt="" />
             </div>
+            {/* <img src="/images/butterfly.gif" alt="" /> */}
+            <img className={style.flowersBottom} src="/images/bottomflowers.png" alt="" />
         </div>
     )
 }
