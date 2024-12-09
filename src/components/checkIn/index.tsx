@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
-import style from './checkin.module.sass'
 import { useRouter } from 'next/navigation'
+import style from './checkin.module.sass'
 
 export default function CheckIn() {
     const [quantity, setQuantity] = useState<number>(0)

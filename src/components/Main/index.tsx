@@ -1,5 +1,8 @@
-import style from './Main.module.sass'
+'use client'
+import { butterFly } from '../../../importsComponents'
+import style from './Main.module.sass';
 export default function MainComponent() {
+   console.log(window.innerWidth)
     return (
         <div className={style.containerMain}>
             <div className={style.containerFlex}>
@@ -18,8 +21,13 @@ export default function MainComponent() {
                 <img src="/images/animals.png" alt="" />
                 <img src="/images/bambi.png" alt="" />
             </div>
-            {/* <img src="/images/butterfly.gif" alt="" /> */}
+            
+                <>
+                {butterFly(-250, -50, 450, 0.002)}
+                {butterFly(150, 20, -450, 0.002)}
+                </>
+            
             <img className={style.flowersBottom} src="/images/bottomflowers.png" alt="" />
         </div>
-    )
+    );
 }
