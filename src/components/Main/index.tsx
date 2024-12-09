@@ -2,9 +2,9 @@
 import { butterFly } from '../../../importsComponents'
 import style from './Main.module.sass';
 export default function MainComponent() {
-   console.log(window.innerWidth)
+    const positionX = window.innerWidth;
     return (
-        <div className={style.containerMain}>
+        <section className={style.containerMain}>
             <div className={style.containerFlex}>
                 <figure className={style.containerPhoto}>
                     <img src='/images/lais.png' alt='foto_Laís' />
@@ -21,13 +21,13 @@ export default function MainComponent() {
                 <img src="/images/animals.png" alt="" />
                 <img src="/images/bambi.png" alt="" />
             </div>
-            
-                <>
-                {butterFly(-250, -50, 450, 0.002)}
-                {butterFly(150, 20, -450, 0.002)}
-                </>
-            
+                {butterFly(positionX - positionX, -50, positionX / 2, 0.002)}
+    
+
+                {butterFly(positionX - (positionX - 25), 150, -positionX / 2, 0.002)}
+        
+
             <img className={style.flowersBottom} src="/images/bottomflowers.png" alt="" />
-        </div>
+        </section>
     );
 }
