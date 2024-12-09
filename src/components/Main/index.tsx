@@ -4,11 +4,11 @@ import { butterFly } from '../../../importsComponents'
 import style from './Main.module.sass';
 export default function MainComponent() {
     const [positionX, setPositionX] = useState(0);
-    
+    console.log(positionX)
     useEffect(() => {
         // Atualiza o tamanho da tela no cliente
         const handleResize = () => {
-          setPositionX(window.innerWidth);
+          setPositionX(document.body.offsetWidth);
         };
     
         // Define o tamanho inicial da tela
@@ -22,6 +22,7 @@ export default function MainComponent() {
           window.removeEventListener('resize', handleResize);
         };
       }, []);
+
     return (
         <section className={style.containerMain}>
             <div className={style.containerFlex}>
@@ -40,10 +41,10 @@ export default function MainComponent() {
                 <img src="/images/animals.png" alt="" />
                 <img src="/images/bambi.png" alt="" />
             </div>
-                {butterFly(positionX - positionX, -50, positionX / 2, 0.002)}
+                {/* {butterFly(0, -50, positionX / 2, 0.002)} */}
     
 
-                {butterFly(positionX - (positionX - 25), 150, -positionX / 2, 0.002)}
+                {/* {butterFly(positionX, -50, 320, 0.002)} */}
         
 
             <img className={style.flowersBottom} src="/images/bottomflowers.png" alt="" />
