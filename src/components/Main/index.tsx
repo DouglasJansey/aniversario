@@ -1,8 +1,27 @@
 'use client'
+import { useEffect, useState } from 'react';
 import { butterFly } from '../../../importsComponents'
 import style from './Main.module.sass';
 export default function MainComponent() {
-    const positionX = window.innerWidth;
+    const [positionX, setPositionX] = useState(0);
+    
+    useEffect(() => {
+        // Atualiza o tamanho da tela no cliente
+        const handleResize = () => {
+          setPositionX(window.innerWidth);
+        };
+    
+        // Define o tamanho inicial da tela
+        handleResize();
+    
+        // Adiciona um listener para atualizações no redimensionamento
+        window.addEventListener('resize', handleResize);
+    
+        // Limpa o listener ao desmontar o componente
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []);
     return (
         <section className={style.containerMain}>
             <div className={style.containerFlex}>

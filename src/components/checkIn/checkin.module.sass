@@ -1,5 +1,5 @@
-@import '../../../styles/_typography'
-@import '../../../styles/_variables'
+@use '../../../styles/_typography'
+@use '../../../styles/_variables'
 .textProps
     display: flex
     width: 60%
@@ -9,8 +9,8 @@
     text-align: center
     position: relative
     font-size: 3rem
-    font-family: $signature
-    color: $brown
+    font-family: _typography.$signature
+    color: _variables.$brown
     line-height: 50px
     z-index: 5
 
@@ -32,7 +32,7 @@
     align-items: center
     flex-direction: column
     font-size: 1.5rem
-    color: $brown
+    color: _variables.$brown
     position: relative
     width: 80%
     max-width: 550px
@@ -76,17 +76,17 @@
             margin: 10px
             outline: none
             &::placeholder
-                color: $brown
+                color: _variables.$brown
                 font-size: 1rem
                 opacity: 0.3
                 text-align: center
             &:focus
-                outline: 2.5px solid $pink
+                outline: 2.5px solid _variables.$pink
 
 .buttonForm
     padding: 5px 10px
     border: none
-    background: $brown
+    background: _variables.$brown
     opacity: 0.7
     color: #FFF
     z-index: 10
@@ -100,14 +100,14 @@
     border: none
     border-radius: 10px
     opacity: 0.8
-    background: $pink
+    background: _variables.$pink
     color: #FFF
     cursor: pointer
     z-index: 10
     margin: 25px
     &:hover
         opacity: 1
-        background: $brown
+        background: _variables.$brown
         transition: 1s ease-in 
 @media screen and ( max-width: 400px )
     .textProps
