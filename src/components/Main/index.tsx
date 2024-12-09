@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react';
 import { butterFly } from '../../../importsComponents'
 import style from './Main.module.sass';
 export default function MainComponent() {
-<<<<<<< HEAD
-=======
     const [positionX, setPositionX] = useState(0);
     console.log(positionX)
     useEffect(() => {
@@ -25,7 +23,6 @@ export default function MainComponent() {
         };
       }, []);
 
->>>>>>> developer
     return (
         <section className={style.containerMain}>
             <div className={style.containerFlex}>
