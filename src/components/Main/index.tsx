@@ -3,25 +3,21 @@ import { useEffect, useState } from 'react';
 import { butterFly } from '../../../importsComponents'
 import style from './Main.module.sass';
 export default function MainComponent() {
-    const [positionX, setPositionX] = useState(0);
-    console.log(positionX)
+    const [windowWidth, setWindowWidth] = useState<number>(0);
+
     useEffect(() => {
-        // Atualiza o tamanho da tela no cliente
-        const handleResize = () => {
-          setPositionX(document.body.offsetWidth);
-        };
-    
-        // Define o tamanho inicial da tela
-        handleResize();
-    
-        // Adiciona um listener para atualizações no redimensionamento
-        window.addEventListener('resize', handleResize);
-    
-        // Limpa o listener ao desmontar o componente
-        return () => {
-          window.removeEventListener('resize', handleResize);
-        };
-      }, []);
+        // Função para atualizar a largura da tela
+        const updateWidth = () => setWindowWidth(window.innerWidth);
+
+        // Atualiza a largura inicial ao carregar o componente
+        updateWidth();
+
+        // Adiciona o listener de resize
+        window.addEventListener('resize', updateWidth);
+
+        // Remove o listener ao desmontar o componente
+        return () => window.removeEventListener('resize', updateWidth);
+    }, []);
 
     return (
         <section className={style.containerMain}>
@@ -41,10 +37,8 @@ export default function MainComponent() {
                 <img src="/images/animals.png" alt="" />
                 <img src="/images/bambi.png" alt="" />
             </div>
-                {/* {butterFly(0, -50, positionX / 2, 0.002)} */}
-    
-
-                {/* {butterFly(positionX, -50, 320, 0.002)} */}
+                {butterFly(-50, -50, 320, 0.005)}
+                {butterFly(0, 150, -320, 0.005)}
         
 
             <img className={style.flowersBottom} src="/images/bottomflowers.png" alt="" />
