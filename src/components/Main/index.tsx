@@ -1,23 +1,7 @@
 'use client'
-import { useEffect, useState } from 'react';
 import { butterFly } from '../../../importsComponents'
 import style from './Main.module.sass';
 export default function MainComponent() {
-    const [windowWidth, setWindowWidth] = useState<number>(0);
-
-    useEffect(() => {
-        // Função para atualizar a largura da tela
-        const updateWidth = () => setWindowWidth(window.innerWidth);
-
-        // Atualiza a largura inicial ao carregar o componente
-        updateWidth();
-
-        // Adiciona o listener de resize
-        window.addEventListener('resize', updateWidth);
-
-        // Remove o listener ao desmontar o componente
-        return () => window.removeEventListener('resize', updateWidth);
-    }, []);
 
     return (
         <section className={style.containerMain}>
@@ -39,7 +23,7 @@ export default function MainComponent() {
             </div>
                 {butterFly(-50, -50, 320, 0.005)}
                 {butterFly(0, 150, -320, 0.005)}
-        
+                
 
             <img className={style.flowersBottom} src="/images/bottomflowers.png" alt="" />
         </section>
