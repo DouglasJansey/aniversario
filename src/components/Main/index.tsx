@@ -4,7 +4,7 @@ import style from './Main.module.sass';
 export default function MainComponent() {
 
     return (
-        <section className={style.containerMain}>
+        <div className={style.containerMain}>
             <div className={style.containerFlex}>
                 <figure className={style.containerPhoto}>
                     <img src='/images/lais.png' alt='foto_Laís' />
@@ -20,12 +20,12 @@ export default function MainComponent() {
                 <img src="/images/squirrel.png" alt="" />
                 <img src="/images/animals.png" alt="" />
                 <img src="/images/bambi.png" alt="" />
+            <img className={style.flowersBottom} src="/images/bottomflowers.png" alt="" />
             </div>
                 {butterFly(-50, -50, 320, 0.002)}
                 {butterFly(0, 150, -320, 0.002)}
                 
 
-            <img className={style.flowersBottom} src="/images/bottomflowers.png" alt="" />
-        </section>
+        </div>
     );
 }

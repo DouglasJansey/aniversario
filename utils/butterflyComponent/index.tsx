@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useRef } from "react";
-import style from './butterfly.module.sass'
+import style from './butterflyComp.module.sass'
 interface butterflyProps {
     positionX: number;
     positionY: number;
@@ -16,6 +16,8 @@ export default function butterfly({positionX, positionY, amplitudeY, speed}: but
         const amplitude = amplitudeY;
         let angle = 0; // Initial angle
         const butterflySpeed = speed;
+        let animationFrameId: number;
+
         let prevX = centerX - amplitude * Math.cos(angle);
         let prevY = centerY + amplitude * Math.sin(angle) * Math.cos(angle);
 
@@ -32,13 +34,14 @@ export default function butterfly({positionX, positionY, amplitudeY, speed}: but
                 prevY = y;
                 angle += butterflySpeed; // Increment the angle for the next frame   
             }
-            requestAnimationFrame(animate);
+           animationFrameId = requestAnimationFrame(animate);
         };
 
         animate(); // Start the animation
 
         return () => {
             // Cleanup if needed
+            cancelAnimationFrame(animationFrameId);
         };
     }, []);
     return (

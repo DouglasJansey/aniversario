@@ -16,7 +16,7 @@
     background-repeat: no-repeat
     background-position: center
     position: relative
-    padding: 35px 0px
+    padding: 0px 0px
     height: 70%
     z-index: 10
     img
@@ -25,20 +25,29 @@
 .containerAnimals
     display: flex
     justify-content: center
-    align-items: flex-end
+    align-items: center
     width: 100%
+    height: 100%
     position: relative
-    margin-top: -85px
+    z-index: 10
+    img
+        position: absolute
+        bottom: 0
     img:nth-child(3)
         max-height: 280px
-        height: 100%
         z-index: 5
     img:nth-child(1)
         max-height: 70px
+        z-index: 6
+        left: 25%
     img:nth-child(2)
         max-height: 80px
+        left: 35%
+        z-index: 6
     img:nth-child(4)
         max-height: 190px
+        right: 25%
+
 .containerFlex
     display: flex
     justify-content: center
@@ -49,17 +58,17 @@
     z-index: 6
 .flowersBottom
     position: absolute
-    bottom: -5px
+    bottom: 0
+    height: 50px
+    width: 100%
     z-index: 15
 .containerMain
     display: flex
     flex-direction: column
     justify-content: center
     align-items: center
-    flex-wrap: wrap
-    height: 100%
     overflow: hidden
-    position: relative
+    height: 100%
     width: 100%
     z-index: 0
 
@@ -82,6 +91,8 @@
     .flowers, .flowerRight
         width: 40%
         height: 10%
+    .flowersBottom
+        width: auto
     .nameContainer
         img
             width: 50%
@@ -89,25 +100,21 @@
         width: 90%
         position: relative
         z-index: 2
-        margin-top: 55px
         img
             margin: auto
         img:nth-child(1)
             position: absolute
-            left: 200px
-            max-height: 70px
-            bottom: -15px
+            left: 20%
+            max-height: 50px
             z-index: 7
         img:nth-child(2)
             position: absolute
-            max-height: 75px
-            left: 35px
-            bottom: -15px
+            max-height: 55px
+            left: -10%
             z-index: 6
         img:nth-child(3)
-            max-height: 110px
-            bottom: -15px
+            max-height: 90px
         img:nth-child(4)
             position: absolute
-            right: -15px
+            right: -35px
             z-index: 1

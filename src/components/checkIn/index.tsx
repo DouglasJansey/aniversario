@@ -57,7 +57,7 @@ export default function CheckIn() {
     }
   
     return (
-        <section id="check" className={style.containerCheck}>
+        <div id="check" className={style.containerCheck}>
             <div className={style.textProps}>
                 O grande dia está chegando e para que seja possível atender a todos
                 da melhor maneira e com muito preparo, gostariamos de ter sua
@@ -99,6 +99,6 @@ export default function CheckIn() {
                 <button style={{display: confirm === 'Yes' ? 'flex' : 'none'}} type='submit' className={style.buttonSubmit} >Confirmar presença</button>
             </form>
             <p>{error && error}</p>
-        </section>
+        </div>
     )
 }

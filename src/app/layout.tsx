@@ -3,11 +3,6 @@ import localFont from "next/font/local";
 import '../../styles/global.sass'
 import {header} from '@../../../importsComponents'
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
 const sourGummy = localFont({
   src: "./fonts/SourGummy_Expanded-Regular.ttf",
   variable: "--font-sour-gummy",
