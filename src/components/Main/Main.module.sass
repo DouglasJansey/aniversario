@@ -68,7 +68,7 @@
     flex-direction: column
     justify-content: center
     align-items: center
-    height: calc(100vh - 60px)
+    height: calc(100vh - 50px)
     width: 100%
     position: relative
     overflow: hidden
@@ -81,20 +81,22 @@
     justify-content: center
     align-items: center
     width: auto
+    height: 100%
     z-index: 6
     figure
         justify-content: center
         display: flex
         width: 100%
     img
-        min-width: 50px
+        min-width: 180px
         width: 90%
 @media screen and ( max-width: 675px )
     .flowersBottom
         width: auto
     .containerFlex
         flex-direction: column
-        flex-grow: 1
+    .containerMain
+        height: calc(100vh - 95px)
     .nameContainer
         img
             width: 35%
@@ -107,9 +109,10 @@
     .containerAnimals
         width: 90%
         position: relative
+        height: 50%
         z-index: 2
         img
-            margin: auto
+            margin: 0
         img:nth-child(1)
             position: absolute
             left: 20%
