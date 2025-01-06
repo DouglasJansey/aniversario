@@ -20,12 +20,10 @@ export default function MainComponent() {
                 <img src="/images/squirrel.png" alt="" />
                 <img src="/images/animals.png" alt="" />
                 <img src="/images/bambi.png" alt="" />
-            <img className={style.flowersBottom} src="/images/bottomflowers.png" alt="" />
+                <img className={style.flowersBottom} src="/images/bottomflowers.png" alt="" />
             </div>
-                {butterFly(-50, -50, 320, 0.002)}
-                {butterFly(0, 150, -320, 0.002)}
-                
-
+            {butterFly(-50, -50, 320, 0.002)}
+            {butterFly(0, 150, -320, 0.002)}
         </div>
     );
 }

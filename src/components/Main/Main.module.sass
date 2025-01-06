@@ -16,12 +16,14 @@
     background-repeat: no-repeat
     background-position: center
     position: relative
-    padding: 0px 0px
-    height: 70%
+    height: 100%
+    width: 100%
+    max-height: 450px
+    max-width: 450px
+    padding: 15px
     z-index: 10
     img
-        width: 70%
-        margin-top: 10px
+        width: 80%
 .containerAnimals
     display: flex
     justify-content: center
@@ -52,8 +54,7 @@
     display: flex
     justify-content: center
     align-items: center
-    flex-wrap: wrap
-    height: 100%
+    height: auto
     width: 100%
     z-index: 6
 .flowersBottom
@@ -67,9 +68,10 @@
     flex-direction: column
     justify-content: center
     align-items: center
-    overflow: hidden
-    height: 100%
+    height: calc(100vh - 60px)
     width: 100%
+    position: relative
+    overflow: hidden
     z-index: 0
 
 .nameContainer
@@ -88,14 +90,20 @@
         min-width: 50px
         width: 90%
 @media screen and ( max-width: 675px )
-    .flowers, .flowerRight
-        width: 40%
-        height: 10%
     .flowersBottom
         width: auto
+    .containerFlex
+        flex-direction: column
+        flex-grow: 1
     .nameContainer
         img
-            width: 50%
+            width: 35%
+    .containerPhoto
+        width: 60%
+        max-width: 450px
+        max-height: 350px
+        img
+            width: 80%
     .containerAnimals
         width: 90%
         position: relative
