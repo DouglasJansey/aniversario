@@ -7,12 +7,26 @@ export default function MainComponent() {
         <div className={style.containerMain}>
             <div className={style.containerFlex}>
                 <figure className={style.containerPhoto}>
-                    <img src='/images/lais.png' alt='foto_Laís' />
+                    <div>
+                        <img src='/images/laisBolo.jpg' alt='foto_Laís' />
+                    </div>
                 </figure>
                 <div className={style.nameContainer}>
-                    <figure>
-                        <img src='/images/nome.png' alt='foto_' />
-                    </figure>
+                    <div>
+                        <figure>
+                            <img src='/images/nome.png' alt='foto_' />
+                        </figure>
+                        <div className={style.containerDate}>
+                            <span>
+                                <h1>08</h1>
+                                <h2>MARÇO</h2>
+                            </span>
+                            <span>
+                                <h1> 13:00</h1>
+                                <h2>HORAS</h2>
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className={style.containerAnimals}>

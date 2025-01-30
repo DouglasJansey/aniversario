@@ -10,14 +10,14 @@ export default function CheckIn() {
     const router = useRouter()
     const url = process.env.NEXT_PUBLIC_URL
     const phone = process.env.NEXT_PUBLIC_PHONE_NUMBER
-    function filterGuests(list: string[]){ 
+    function filterGuests(list: string[]) {
         const values: string[] = []
         list.length > 0 && list.forEach((element, index) => index !== 0 && values.push(element))
         return values.join(', ')
     }
-    function checkInputs(valuesCheck: any){
+    function checkInputs(valuesCheck: any) {
         console.log(valuesCheck)
-        if(valuesCheck.value === '' && valuesCheck.length < 1){
+        if (valuesCheck.value === '' && valuesCheck.length < 1) {
             setError('Por favor, preencha todos os campos.')
             return false
         }
@@ -27,13 +27,13 @@ export default function CheckIn() {
     // FUNCTION TO SEND MENSAGEM IN WHATSAPP NUMBER
     function sendMessagem(e: any) {
         e.preventDefault()
-        const {name} = e.target
-        const inputValues = quantity < 1 && name.value || Array.from({length: name.length}, (_, i) => name[i].value)
+        const { name } = e.target
+        const inputValues = quantity < 1 && name.value || Array.from({ length: name.length }, (_, i) => name[i].value)
         const outputValues = quantity >= 1 && filterGuests(inputValues)
-        const message = quantity < 1 ? `Oi, estou entrando em contato para confirmar presença, ${inputValues}` 
-        : `Oi, estou entrando em contato para confirma presença, ${inputValues[0]} e mais acompanhantes: ${outputValues}`;
+        const message = quantity < 1 ? `Oi, estou entrando em contato para confirmar presença, ${inputValues}`
+            : `Oi, estou entrando em contato para confirma presença, ${inputValues[0]} e mais acompanhantes: ${outputValues}`;
         (checkInputs(name) && confirm === 'Yes') && router.push(`${url}/send?phone=${phone}&text=${message}.`);
-        
+
     }
 
     function QuantityAccumulate(increment: number) {
@@ -55,50 +55,50 @@ export default function CheckIn() {
             </>
         )
     }
-  
+
     return (
         <div id="check" className={style.containerCheck}>
-            <div className={style.textProps}>
-                O grande dia está chegando e para que seja possível atender a todos
-                da melhor maneira e com muito preparo, gostariamos de ter sua
-                presença confirmada.
-            </div>
-            <form className={style.formContainer} onSubmit={(e) => sendMessagem(e)}>
-                <label htmlFor="name">Nome:
-                    <input type="text" name="name" onFocus={() => setError('')}
-                        placeholder='Nome do Convidado' />
-                </label>
-                <div>
-                    Você irá ao evento?
-                    <span>
-                        <div>
-                            <input type="radio" onChange={(e) => setConfirm(e.target.value)} name="going" value="Yes"
-                            /><label>
-                                Sim
-                            </label>
-                        </div>
-                        <div>
-                            <input type="radio" onChange={(e) => setConfirm(e.target.value)} name="going" value="No"
-                            /><label>
-                                Não
-                            </label>
-                        </div>
-                    </span>
+                <div className={style.textProps}>
+                    O grande dia está chegando e para que seja possível atender a todos
+                    da melhor maneira e com muito preparo, gostariamos de ter sua
+                    presença confirmada.
                 </div>
-              {confirm === 'Yes' && <>
-                <div>
-                    Quantos acompanhantes?
-                    <span>
-                        <input className={style.buttonForm} onClick={() => QuantityAccumulate(-1)} type="button" value="-" />
-                        {quantity}
-                        <input className={style.buttonForm} onClick={() => QuantityAccumulate(1)} type="button" value="+" />
-                    </span>
-                </div>
-                {adultNumbers()}
-              </>}
-                <button style={{display: confirm === 'Yes' ? 'flex' : 'none'}} type='submit' className={style.buttonSubmit} >Confirmar presença</button>
-            </form>
-            <p>{error && error}</p>
+                <form className={style.formContainer} onSubmit={(e) => sendMessagem(e)}>
+                    <label htmlFor="name">Nome:
+                        <input type="text" name="name" onFocus={() => setError('')}
+                            placeholder='Nome do Convidado' />
+                    </label>
+                    <div>
+                        Você irá ao evento?
+                        <span>
+                            <div>
+                                <input type="radio" onChange={(e) => setConfirm(e.target.value)} name="going" value="Yes"
+                                /><label>
+                                    Sim
+                                </label>
+                            </div>
+                            <div>
+                                <input type="radio" onChange={(e) => setConfirm(e.target.value)} name="going" value="No"
+                                /><label>
+                                    Não
+                                </label>
+                            </div>
+                        </span>
+                    </div>
+                    {confirm === 'Yes' && <>
+                        <div>
+                            Quantos acompanhantes?
+                            <span>
+                                <input className={style.buttonForm} onClick={() => QuantityAccumulate(-1)} type="button" value="-" />
+                                {quantity}
+                                <input className={style.buttonForm} onClick={() => QuantityAccumulate(1)} type="button" value="+" />
+                            </span>
+                        </div>
+                        {adultNumbers()}
+                    </>}
+                    <button style={{ display: confirm === 'Yes' ? 'flex' : 'none' }} type='submit' className={style.buttonSubmit} >Confirmar presença</button>
+                </form>
+                <p>{error && error}</p>
         </div>
     )
 }
