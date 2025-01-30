@@ -1,4 +1,5 @@
 import CheckIn from "@/components/checkIn";
+import GiftSuggestion from "@/components/giftSuggestion";
 import MainComponent from "@/components/MainComponent";
 import Main from "@/components/Main";
 import Header from "@/components/header";
@@ -6,6 +7,7 @@ import Location from '@/components/location'
 import Butterfly from "../utils/butterflyComponent";
 
 export const checkIn = <CheckIn />
+export const giftSuggestion = <GiftSuggestion />
 export const mainComponent = <MainComponent />
 export const main = <Main />
 export const header = <Header />

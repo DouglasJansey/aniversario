@@ -19,7 +19,7 @@ export default function header() {
                     <Link className={style.textLink} href={'#location'}>
                         Localização
                     </Link>
-                    <Link className={style.textLink} href={'#giftoptions'}>Opções de presentes
+                    <Link className={style.textLink} href={'#giftSuggestion'}>Opções de presentes
                     </Link>
                 </nav>
             </div>

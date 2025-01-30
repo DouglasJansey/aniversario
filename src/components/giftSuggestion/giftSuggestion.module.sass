@@ -1,0 +1,224 @@
+@use '../../../styles/_typography' as typography
+@use '../../../styles/_variables' as variables
+
+.text
+    font-family: typography.$sourGumy
+    color: variables.$white
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.2)
+    stroke-dashoffset: 1000
+    stroke-dasharray: 100
+
+.containerAnimals
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: auto
+    position: relative
+    z-index: 10
+    img
+        position: absolute
+        bottom: 0
+    img:nth-child(3)
+        max-height: 280px
+        z-index: 5
+    img:nth-child(1)
+        max-height: 70px
+        z-index: 6
+        left: 25%
+    img:nth-child(2)
+        max-height: 80px
+        left: 35%
+        z-index: 6
+    img:nth-child(4)
+        max-height: 190px
+        right: 25%
+.containerPhoto
+    display: flex
+    justify-content: center
+    align-items: center
+    height: auto
+    img
+        height: 100%
+.containerFlex
+    display: flex
+    justify-content: center
+    align-items: flex-start
+    background-image: url(/images/laisFundo.jpg)
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
+    height: 100%
+    width: 100%
+    z-index: 1
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: rgba(0,0,0,0.4)
+        z-index: 5
+
+.flowersBottom
+    position: absolute
+    bottom: 0
+    height: 50px
+    width: 100%
+    z-index: 15
+
+.containerMain
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    height: 100vh
+    width: 100%
+    position: relative
+    overflow: hidden
+    z-index: 1
+
+.nameContainer
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+    width: 100%
+    height: 100%
+    z-index: 6
+    div:nth-child(1)
+        display: block
+        width: auto
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        div
+            display: flex
+            align-items: center
+            width: 100%
+            height: 100%
+            justify-content: center
+            h1
+                font-size: 5rem
+                margin: 0
+                padding: 0
+            p
+                font-size: 2.5rem
+                margin: 0
+                padding: 0
+                text-align: center
+.nameContainer
+    @extend .text
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+    width: 100%
+    height: 70%
+    z-index: 6
+    div:nth-child(1)
+        display: block
+        width: auto
+        justify-content: center
+        align-items: center
+        flex-direction: column
+    div
+        display: flex
+        align-items: center
+        width: 100%
+        height: 100%
+        justify-content: center
+        h1
+            font-size: 5rem
+            margin: 0
+            padding: 0
+        p
+            font-size: 2.5rem
+            margin: 0
+            padding: 0
+            text-align: center
+.containerDate
+    display: flex
+    background: green
+    span
+        display: flex
+        width: 50%
+        height: 100%
+        align-items: center
+        justify-content: center
+        padding: 20px
+        flex-direction: column
+        border-right: 2px dotted variables.$pink
+        h1, h2
+            margin: 0
+            padding: 0
+            font-family: var(--font-sour-gummy)
+        h1
+            font-size: 4.5rem
+        h2
+            color: variables.$brown
+            font-size: 1.5rem
+    span:nth-child(2)
+        border: none
+    img
+        max-width: 480px
+        width: 90%
+        margin-bottom: 20px
+@media screen and ( max-width: 675px )
+    .flowersBottom
+        width: auto
+    .containerFlex
+        flex-direction: column
+        background-size: 100% 100%
+        height: 100%
+    .containerMain
+        height: calc(100vh - 90px)
+    .nameContainer
+        width: 90%
+        div:nth-child(1)
+            width: 100%
+            height: 100%
+            figure:nth-child(1)
+                margin: 0
+                img
+                    width: 40%
+    .containerDate
+        justify-content: center
+        span
+            width: 30%
+            height: 50px
+            h1
+                font-size: 1.5rem
+                padding: 5px
+            h2
+                font-size: 1rem
+                padding: 5px
+    .containerPhoto
+        div
+            max-width: 350px
+            max-height: 350px
+            margin: 15px
+    .containerAnimals
+        width: 90%
+        position: relative
+        height: 50%
+        z-index: 2
+        img
+            margin: 0
+        img:nth-child(1)
+            position: absolute
+            left: 20%
+            max-height: 50px
+            z-index: 7
+        img:nth-child(2)
+            position: absolute
+            max-height: 55px
+            left: -10%
+            z-index: 6
+        img:nth-child(3)
+            max-height: 90px
+        img:nth-child(4)
+            position: absolute
+            right: -35px
+            z-index: 1
