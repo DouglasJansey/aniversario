@@ -19,7 +19,6 @@ export default function GiftSuggestion() {
        return cardSize < 500 ? value / 2 : value
     }
 
-    console.log(moveX)
     useEffect(() => {
         setCradSize(sizeRef.current?.clientWidth || 0)
         const interval = setInterval(() => {
