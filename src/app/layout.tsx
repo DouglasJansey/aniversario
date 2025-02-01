@@ -13,6 +13,11 @@ const yustineSignature = localFont({
   variable: "--font-yustine",
   weight: "normal",
 });
+const bebas = localFont({
+  src: "./fonts/BebasNeue-Regular.ttf",
+  variable: "--font-bebas",
+  weight: "normal",
+});
 export const metadata: Metadata = {
   title: "Laís 1 aninho",
   description: "Landing page Laís 1 aninho",
@@ -25,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${yustineSignature.variable} ${sourGummy.variable}`}>
+      <body className={`${yustineSignature.variable} ${sourGummy.variable} ${bebas.variable}`}>
         {header}
         {children}
       </body>
