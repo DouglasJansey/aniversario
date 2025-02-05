@@ -17,12 +17,13 @@ export default function butterfly({positionX, positionY, amplitudeY, speed}: but
         let angle = 0; // Initial angle
         const butterflySpeed = speed;
         let animationFrameId: number;
+        let isMounted = true;
 
         let prevX = centerX - amplitude * Math.cos(angle);
         let prevY = centerY + amplitude * Math.sin(angle) * Math.cos(angle);
 
         const animate = () => {
-            if (butterflyRef.current) {
+            if (butterflyRef.current && isMounted) {
                 const x = centerX - amplitude * Math.cos(angle);
                 const y = centerY - amplitude * Math.sin(angle) * Math.cos(angle);
                 const dx = x - prevX
@@ -40,10 +41,11 @@ export default function butterfly({positionX, positionY, amplitudeY, speed}: but
         animate(); // Start the animation
 
         return () => {
+            isMounted = false;
             // Cleanup if needed
             cancelAnimationFrame(animationFrameId);
         };
-    }, []);
+    }, [positionX, positionY, amplitudeY, speed]);
     return (
         <>
             <img ref={butterflyRef} className={style.butterfly} src='/images/butterfly.gif' alt='butterfly' />

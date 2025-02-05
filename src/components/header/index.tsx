@@ -1,11 +1,20 @@
+'use client'
 import Link from "next/link";
 import style from './header.module.sass'
+import { useState } from "react";
 
 export default function header() {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    // Fecha o menu ao clicar em um link
+    const handleCloseMenu = () => setMenuOpen(false);
+    
     return (
         <div className={style.flexContainer}>
             <div className={style.menu}>
-                <input type="checkbox" id="menuCheck" name="menu" />
+                <input type="checkbox" id="menuCheck" name="menu"
+                    checked={menuOpen}
+                    onChange={() => setMenuOpen(!menuOpen)} />
                 <label htmlFor="menuCheck">
                     <span></span>
                     <span></span>
@@ -13,13 +22,13 @@ export default function header() {
                 </label>
                 <nav className={style.navbar}>
                     {/* Add a background image to the link */}
-                    <Link className={style.textLink} href={'#check'}>Confirmar presença
+                    <Link className={style.textLink} href={'#check'} onClick={handleCloseMenu}>Confirmar presença
                     </Link>
 
-                    <Link className={style.textLink} href={'#location'}>
+                    <Link className={style.textLink} href={'#location'} onClick={handleCloseMenu}>
                         Localização
                     </Link>
-                    <Link className={style.textLink} href={'#giftSuggestion'}>Opções de presentes
+                    <Link className={style.textLink} href={'#giftSuggestion'} onClick={handleCloseMenu}>Opções de presentes
                     </Link>
                 </nav>
             </div>

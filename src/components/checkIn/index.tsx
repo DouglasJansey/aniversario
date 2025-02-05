@@ -10,11 +10,13 @@ export default function CheckIn() {
     const router = useRouter()
     const url = process.env.NEXT_PUBLIC_URL
     const phone = process.env.NEXT_PUBLIC_PHONE_NUMBER
+   
     function filterGuests(list: string[]) {
         const values: string[] = []
         list.length > 0 && list.forEach((element, index) => index !== 0 && values.push(element))
         return values.join(', ')
     }
+   
     function checkInputs(valuesCheck: any) {
         console.log(valuesCheck)
         if (valuesCheck.value === '' && valuesCheck.length < 1) {
@@ -37,10 +39,11 @@ export default function CheckIn() {
     }
 
     function QuantityAccumulate(increment: number) {
-        const incrementValue = Math.max(0, quantity + increment)
-        setQuantity(incrementValue)
+        const incrementValue = Math.max(0, quantity + increment);
+        (quantity <= 10 && quantity >= 0) && setQuantity(incrementValue)
 
     }
+    
     function adultNumbers() {
         const adultNumber = Array.from({ length: quantity }, (_, i) => i + 1)
         return (
@@ -65,21 +68,21 @@ export default function CheckIn() {
                 </div>
                 <form className={style.formContainer} onSubmit={(e) => sendMessagem(e)}>
                     <label htmlFor="name">Nome:
-                        <input type="text" name="name" onFocus={() => setError('')}
-                            placeholder='Nome do Convidado' />
+                        <input type="text" name="name" id='name' onFocus={() => setError('')}
+                            placeholder='Nome do Convidado' autoComplete='name' />
                     </label>
                     <div>
                         Você irá ao evento?
                         <span>
                             <div>
-                                <input type="radio" onChange={(e) => setConfirm(e.target.value)} name="going" value="Yes"
-                                /><label>
+                                <input id='goingYes' type="radio" onChange={(e) => setConfirm(e.target.value)} name="going" value="Yes"
+                                /><label htmlFor='goingYes'>
                                     Sim
                                 </label>
                             </div>
                             <div>
-                                <input type="radio" onChange={(e) => setConfirm(e.target.value)} name="going" value="No"
-                                /><label>
+                                <input id='goingNo' type="radio" onChange={(e) => setConfirm(e.target.value)} name="going" value="No"
+                                /><label htmlFor='goingNo'>
                                     Não
                                 </label>
                             </div>

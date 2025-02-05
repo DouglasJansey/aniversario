@@ -9,14 +9,16 @@ export default function GiftSuggestion() {
     const sizeRef = createRef<HTMLDivElement>()
     const buttonValues = [0, -500, -1000]
     const items = [{ image: '/images/vestido.png', title: 'Roupas', desc: 'Tamanho: 2 anos' },
-        { image: '/images/sapatos.png', title: 'Calçados', desc: 'Tamanho: 20' },
-        { image: '/images/brinquedos.png', title: 'Eu amo', desc: 'brinquedos' },
+    { image: '/images/sapatos.png', title: 'Calçados', desc: 'Tamanho: 20' },
+    { image: '/images/brinquedos.png', title: 'Eu amo', desc: 'brinquedos' },
     ]
+
     function valueCheck(value: number): boolean {
         return moveX === value ? true : false
     }
-    function onChangeValue(value: number): number{
-       return cardSize < 500 ? value / 2 : value
+
+    function onChangeValue(value: number): number {
+        return cardSize < 500 ? value / 2 : value
     }
 
     useEffect(() => {
@@ -26,6 +28,7 @@ export default function GiftSuggestion() {
         }, 5000)
         return () => clearInterval(interval)
     }, [moveX, sizeRef])
+    
     return (
         <section id='giftSuggestion' className={style.containerMain}>
             <div className={style.containerFlex}>
@@ -36,18 +39,18 @@ export default function GiftSuggestion() {
                     </div>
                 </div>
                 <div className={style.containerGift}>
-                    <div className={style.containerCard}ref={sizeRef}>
-                        {items.map((item, index) => (
-                            <ul key={index} style={{transform: `translateX(${moveX}px)`}}>
-                                <li>
+                    <div className={style.containerCard} ref={sizeRef}>
+                        <ul style={{ transform: `translateX(${moveX}px)` }}>
+                            {items.map((item, index) => (
+                                <li  key={index}>
                                     {giftCard({ src: item.image, title: item.title, desc: item.desc })}
                                 </li>
-                            </ul>
-                        ))}
+                            ))}
+                        </ul>
                     </div>
                     <div className={style.containerButton}>
                         {buttonValues.map((value, index) => (
-                            <input type='radio' key={index} checked={valueCheck(onChangeValue(value))} name='button' onChange={() => setMoveX(onChangeValue(value))}/>
+                            <input type='radio' key={index} checked={valueCheck(onChangeValue(value))} name='button' onChange={() => setMoveX(onChangeValue(value))} />
                         ))}
                     </div>
                 </div>

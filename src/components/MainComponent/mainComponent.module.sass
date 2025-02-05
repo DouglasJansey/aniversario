@@ -1,3 +1,5 @@
+@use '../../../styles/_variables' as variables
+
 .containerFlower
     display: flex
     width: 100%
@@ -20,7 +22,7 @@
     top: -10px
     position: absolute
     transform: scaleX(-1)
-    
+
 .flex
     display: flex
     justify-content: center
@@ -36,4 +38,43 @@
         width: 100%
         height: 100%
 
-    
+.buttonTop
+    display: flex
+    justify-content: center
+    align-items: center
+    position: fixed
+    height: 50px
+    width: 50px
+    background: none
+    border-radius: 100%
+    font-family: var(--font-sour-gummy)
+    font-weight: bold
+    color: variables.$brown
+    right: 5px
+    top: 0
+    bottom: 0
+    overflow: hidden
+    margin: auto
+    z-index: 99
+    padding: 0
+    border: 2px solid variables.$brown
+    &::before
+        content: ''
+        background: pink
+        position: absolute
+        width: 100%
+        height: 100%
+        inset: 0
+        opacity: 0.5
+        z-index: 98
+    span
+        display: flex
+        margin-top: 5px
+        width: 15px
+        height: 15px
+        background: none
+        border-top: solid 2px variables.$brown
+        border-right: solid 2px variables.$brown
+        border-left: none
+        z-index: 99
+        transform: rotate(-45deg)

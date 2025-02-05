@@ -1,8 +1,7 @@
-@use '../../../styles/_typography' as typography
 @use '../../../styles/_variables' as variables
 
 .text
-    font-family: typography.$sourGumy
+    font-family: var(--font-sour-gummy)
     color: variables.$white
     text-shadow: 2px 2px 3px rgba(0,0,0,0.2)
     stroke-dashoffset: 1000
@@ -46,20 +45,22 @@
     align-items: center
     flex-direction: column
     height: 100%
-    width: 50%
-    gap: 5px
+    width: 70%
     z-index: 10
-    ul
-        width: 100%
 .containerCard
     display: flex
-    width: 500px
-    overflow: hidden
+    width: 505px
     z-index: 2
-    position: relative
-    margin-left: 20px
+    margin: 10px
+    overflow: hidden
+    ul
+        display: flex
+        width: 100%
+        gap: 1%
+        
     li
         list-style: none
+        
 .containerButton
     width: 100%
     input
@@ -90,7 +91,7 @@
     background-position: -50px
     align-items: center
     position: relative
-    height: 100vh
+    height: calc(100vh - 88px)
     width: 100%
     overflow: hidden
     z-index: 1
@@ -115,95 +116,29 @@
     height: auto
     z-index: 6
     div:nth-child(1)
-        display: block
-        width: auto
+        display: flex
+        width: 80%
         justify-content: center
         align-items: center
         flex-direction: column
     div
         display: flex
         align-items: center
-        width: 100%
+        width: 50%
         height: 100%
         justify-content: center
         h1
-            font-size: 5rem
+            font-size: 3rem
             margin: 0
             padding: 0
         p
-            font-size: 2.5rem
+            font-size: 1.5rem
             margin: 0
             padding: 0
             text-align: center
 
-@media screen and ( max-width: 850px )
-    .flowersBottom
-        width: auto
-    .containerFlex
-        flex-direction: column
-        align-items: flex
-        justify-content: center
-        height: 100%
-        width: 100%
-    .containerMain
-        background-position: 20%
-        background-size: cover
-    .nameContainer
-        width: 100%
-        height: 50%
-        justify-content: flex-start
-        div
-            display: flex
-            justify-content: center
-            align-items: center
-            width: 90%
-            height: auto
-            text-align: center
-            margin-top: 10px
-            h1
-                font-size: 3rem
-            p
-                font-size: 1.5rem
 
-    .containerPhoto
-        div
-            max-width: 150px
-            max-height: 350px
-            margin: 15px
-    .containerAnimals
-        width: 90%
-        height: 100%
-        z-index: 2
-        img
-            margin: 0
-        img:nth-child(1)
-            position: absolute
-            left: 20%
-            max-height: 50px
-            z-index: 7
-        img:nth-child(2)
-            position: absolute
-            max-height: 55px
-            left: -10%
-            z-index: 6
-        img:nth-child(3)
-            max-height: 90px
-        img:nth-child(4)
-            position: absolute
-            right: -35px
-            z-index: 1
-    .containerGift
-        width: 50%
-        height: auto
-        display: flex
-        justify-content: center
-        align-items: center
-        flex-direction: column
-        z-index: 5
-    .containerCard
-        width: 250px
-        margin-left: 50px
-@media screen and ( max-width: 500px )
+@media screen and ( max-width: 700px )
     .flowersBottom
         width: auto
     .containerFlex
@@ -212,12 +147,14 @@
         justify-content: center
         height: 100%
         width: 100%
+        margin-top: 25px
     .containerMain
-        background-position: 28%
+        background-position: 30%
         background-size: cover
+        height: 100vh
     .nameContainer
-        width: 80%
-        height: 70%
+        width: 90%
+        height: auto
         flex-wrap: wrap
         white-space: wrap
         div
@@ -269,5 +206,8 @@
         flex-direction: column
         z-index: 5
     .containerCard
-        width: 250px
+        width: 255px
         margin-left: 10px
+        margin-top: 40%
+        li
+            margin-right: -5px
