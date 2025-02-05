@@ -3,7 +3,7 @@ import Link from "next/link";
 import style from './header.module.sass'
 import { useState } from "react";
 
-export default function header() {
+export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
 
     // Fecha o menu ao clicar em um link
